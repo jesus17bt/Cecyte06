@@ -1,0 +1,187 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Menú de navegación */
+nav {
+    background-color: var(--verde);
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--verde-claro);
+    color: white;
+}
+
+/* Título de la página */
+#docentes-header {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 36px;
+    color: var(--verde);
+}
+
+/* Sección de docentes */
+#docentes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Tres columnas en pantallas grandes */
+    gap: 30px;
+    padding: 20px;
+    margin-top: 30px;
+    min-height: calc(100vh - 120px);  /* Ajustamos para que ocupe toda la pantalla */
+}
+
+.docente {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.docente:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen del docente */
+.docente-imagen {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+
+.docente h2 {
+    font-size: 24px;
+    padding: 15px;
+    text-align: center;
+    color: var(--verde);
+}
+
+/* Calificación */
+.calificacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calificacion .rating {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.stars {
+    font-size: 20px;
+    color: gold;
+}
+
+/* Comentarios */
+.comentarios {
+    padding: 0 15px 15px 15px;
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1;  /* Asegura que los comentarios se expandan si es necesario */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    #docentes {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columnas en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    #docentes {
+        grid-template-columns: 1fr;  /* 1 columna en pantallas más pequeñas */
+    }
+
+    .docente-imagen {
+        height: 150px; /* Reduce el tamaño de la imagen */
+    }
+
+    .docente h2 {
+        font-size: 22px;
+    }
+
+    .calificacion .rating {
+        font-size: 18px;
+    }
+
+    .stars {
+        font-size: 18px;
+    }
+
+    .comentarios {
+        font-size: 12px;
+    }
+
+    /* Asegura que el contenido no se desborde en móviles */
+    .docente {
+        height: auto; /* Hace que las tarjetas tengan altura dinámica */
+        padding-bottom: 20px; /* Espacio adicional en la parte inferior */
+    }
+}
+
+footer {
+    background-color: var(--verde);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer .contact-info {
+    margin-bottom: 20px;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover {
+    transform: scale(1.2);
+}

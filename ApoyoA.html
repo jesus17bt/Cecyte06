@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyo Académico</title>
+    <link rel="stylesheet" href="ApoyoA.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Para íconos -->
+</head>
+<body>
+    <nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="nav-list">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/votaciones">Votaciones</a></li>
+            <li><a href="/especialidades">Especialidades</a></li>
+            <li><a href="/docentes">Docentes</a></li>
+            <li><a href="/ApoyoA.html">Apoyo Académico</a></li>
+        </ul>
+    </nav>
+
+    <div id="apoyo-academico-header">
+        <h1>Apoyo Académico</h1>
+    </div>
+
+    <div id="apoyo-academico-container">
+        <!-- Cuadro grande con horario -->
+        <div id="ahora">
+            <h2>Horario de Clases</h2>
+            <table>
+                <tr>
+                    <th>Hora</th>
+                    <th>Materia</th>
+                </tr>
+                <tr>
+                    <td>08:00 AM - 10:00 AM</td>
+                    <td>Matemáticas</td>
+                </tr>
+                <tr>
+                    <td>10:00 AM - 12:00 PM</td>
+                    <td>Física</td>
+                </tr>
+                <tr>
+                    <td>12:00 PM - 02:00 PM</td>
+                    <td>Química</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Sección tipo Reddit -->
+        <div id="foro">
+            <h3>Foro de Discusión</h3>
+            <div class="post">
+                <div class="post-header">
+                    <h4>Discusión sobre Cálculo Integral</h4>
+                </div>
+                <div class="post-content">
+                    <p>¿Alguien sabe cómo resolver la integral definida en el ejercicio 3?</p>
+                    <button>Ver Respuestas</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección para subir o ver archivos -->
+        <div id="subir-archivos">
+            <h3>Sube tu Material de Estudio</h3>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <label for="archivo">Selecciona un archivo (Imagen o Documento):</label>
+                <input type="file" id="archivo" name="archivo" accept="image/*, .pdf, .docx">
+                <button type="submit">Subir</button>
+            </form>
+
+            <h4>Archivos Subidos</h4>
+            <ul id="archivos">
+                <li><a href="#">Apuntes de Matemáticas.pdf</a></li>
+                <li><a href="#">Fórmulas Químicas.jpg</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tu Escuela - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

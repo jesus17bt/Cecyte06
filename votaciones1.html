@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votación Categoría 1</title>
+    <link rel="stylesheet" href="votaciones.css">
+</head>
+<body>
+    <header id="votaciones-header">
+        <h1>Votación para la Categoría</h1>
+    </header>
+
+    <section>
+        <h2>Vota por tu favorito</h2>
+
+        <form action="procesar_voto.php" method="POST">
+            <input type="radio" id="juan" name="voto" value="Juan Pérez">
+            <label for="juan">Juan Pérez</label><br>
+            <input type="radio" id="ana" name="voto" value="Ana García">
+            <label for="ana">Ana García</label><br>
+            <input type="radio" id="pedro" name="voto" value="Pedro Martínez">
+            <label for="pedro">Pedro Martínez</label><br>
+            <input type="radio" id="maria" name="voto" value="María López">
+            <label for="maria">María López</label><br><br>
+
+            <input type="submit" value="Votar">
+        </form>
+    </section>
+
+    <footer>
+        <p>Gracias por participar en las votaciones</p>
+    </footer>
+</body>
+</html>

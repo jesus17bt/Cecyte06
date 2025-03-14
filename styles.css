@@ -1,0 +1,251 @@
+/* styles.css */
+
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Colores verde y blanco */
+:root {
+    --verde: #4caf50; /* Verde */
+    --verde-claro: #81c784; /* Verde claro */
+    --blanco: #ffffff; /* Blanco */
+    --gris: #f1f1f1; /* Gris claro */
+}
+
+/* Menú de navegación */
+nav {
+    background-color: var(--verde); /* Fondo verde */
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--verde-claro);
+    color: white;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--verde);
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: white;
+}
+
+#menu {
+    display: block;
+}
+
+#menu.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    #menu.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Imagen principal */
+header {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Secciones de contenido */
+.content-section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: var(--gris);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    color: var(--verde);
+    margin-bottom: 10px;
+}
+
+.content-section p {
+    font-size: 16px;
+    color: #555;
+}
+
+a {
+    color: var(--verde);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Animación de entrada de las secciones */
+@keyframes slideIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Noticias y Eventos */
+#noticias, #eventos {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: mostrarElementos 1s ease-in-out forwards;
+}
+
+.news-card, .event-card {
+    width: 30%;
+    padding: 10px;
+    background-color: var(--gris);
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.news-card img, .event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.news-card:hover, .event-card:hover {
+    transform: scale(1.05);
+}
+
+@keyframes mostrarElementos {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Redes sociales */
+footer {
+    background-color: var(--verde);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer .contact-info {
+    margin-bottom: 20px;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover {
+    transform: scale(1.2);
+}
+
+/* Media Queries (Responsive Design) */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .content-section {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-card, .event-card {
+        width: 90%;
+    }
+
+    footer .social-media a {
+        font-size: 16px;
+    }
+}

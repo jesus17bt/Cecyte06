@@ -1,0 +1,156 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Colores verde y blanco */
+:root {
+    --verde: #4caf50;
+    --verde-claro: #81c784;
+    --blanco: #ffffff;
+}
+
+/* Menú de navegación */
+nav {
+    background-color: var(--verde);
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--verde-claro);
+    color: white;
+}
+
+/* Título de la página */
+#votaciones-header {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 36px;
+    color: var(--verde);
+}
+
+/* Cuadros de categorías */
+#categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Ajustamos para 3 columnas en escritorio */
+    gap: 30px;  /* Aumento el espacio entre los cuadros */
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.categoria-cuadro {
+    background-color: var(--verde-claro);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    transition: transform 0.3s ease;
+    height: 100%;  /* Para que todos los cuadros tengan la misma altura */
+    min-height: 200px;  /* Definimos una altura mínima */
+}
+
+.categoria-cuadro:hover {
+    transform: scale(1.05);
+}
+
+/* Ajuste de las imágenes dentro de los cuadros */
+.categoria-cuadro img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.categoria-cuadro h3 {
+    font-size: 24px;
+    color: var(--verde);
+}
+
+.categoria-cuadro p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    #categorias {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    #categorias {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+
+    .categoria-cuadro {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .categoria-cuadro img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+footer {
+    background-color: var(--verde);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer .contact-info {
+    margin-bottom: 20px;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover {
+    transform: scale(1.2);
+}
